@@ -1,0 +1,19 @@
+template[TEMP_StructGlobal_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Struct global - CSR"
+		declarations {
+			+<sujeito> : *Sujeito,
+			+<listaEstados> : List[*Uf]
+		} 
+	} 
+	head { 
+		title = "Struct Global" 
+ 	} 
+ 	body {
+		operations {
+			<listaEstados>.ask(),
+			<sujeito>.ask()
+		}
+ 	}
+}

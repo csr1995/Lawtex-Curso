@@ -1,0 +1,36 @@
+template[TEMP_Tabela_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Tabela - CSR"
+		declarations {
+			+|informacoesTabela| : Vector[Struct] {
+				name = "Informações do processo"
+				fields {
+					+[numeroProcesso]: String where ("CNJ") {
+						name = "Número do processo"
+						request = "Informe o número do processo"
+					},
+					+[codigoInterno]: String where ("\d\d\d\d.\d\d\d\d.\d") {
+						name = "Código interno"
+						request = "Informe o número do código interno"
+						help = "Código utilizado internamento pela responsável dessa ação"
+					}
+				}
+			}
+		} 
+	} 
+	head { 
+		title = "Tube de Tabela" 
+ 	} 
+ 	body {
+		operations {
+			foreach(<processo> IN |informacoesTabela|) {
+				//Primeira coluna com número do processo
+				<processo.numeroProcesso> = bold(align(<processo.numeroProcesso>,"center")),
+				//Segunda coluna com código interno
+				<processo.codigoInterno> = bold(align(<processo.codigoInterno>,"center"))	
+			},
+			table(|informacoesTabela|,"horizontal","","","green","blue")
+		}
+ 	}
+}

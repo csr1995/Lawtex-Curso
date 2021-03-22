@@ -1,0 +1,26 @@
+template[TEMP_AssocList_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Exercício de Lista Associativa - CSR"
+		declarations {
+			list[UF] {
+				name = "Algumas unidades federativas"
+				fields = {"Nome" , "Sigla"}
+				options = ({"São Paulo" , "SP"}, {"Rio de Janeiro" , "RJ"}, {"Minas Gerais", "MG"})
+				type = "String"
+			},
+			+<localAssinatura> : List[UF] {
+				name = "Indique o local de assinatura"
+				atomic = true
+			}
+		} 
+	} 
+	head { 
+		title = "Local de assinatura do contrato"
+ 	} 
+ 	body {
+		operations {
+			print "Local escolhido: " & <localAssinatura>.getByKey("Sigla")
+		}
+ 	}
+}

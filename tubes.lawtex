@@ -1,0 +1,45 @@
+template[TEMP_TesteTubes_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Tubes por extenso e Date - CSR10"
+		declarations {
+			+<cesarHenrique> : Struct {
+				name = "Dados do César"
+				request = "Informe as informações do queridissimo César"
+				fields {
+					+[dataNascimento] : Date {
+						name = "Data de nascimento"
+						request = "Advinhe a data de nascimento do queridissimo César"
+					},
+					+[cache] : Currency {
+						name = "Cache de jogador caro"
+						request = "Informe o cache"
+					},
+					+[pretendentes] : Integer {
+						name = "Número de pretendentes"
+						request = "Informe o número de pretendentes que aparecem mensalmente na porta do César"
+						default = 400
+					},
+					+[dataColetaInformacoes] : Date {
+						name = "Data"
+						request = "Informe a data de coleta de informações"
+					},
+					-[idade] : Integer
+				}
+			}
+		} 
+	} 
+	head { 
+		title = "Tubes por extenso e Date" 
+ 	} 
+ 	body {
+		operations {
+			<cesarHenrique.dataColetaInformacoes> = today(),
+			<cesarHenrique.idade> = minusDate(<cesarHenrique.dataColetaInformacoes>, <cesarHenrique.dataNascimento>, "years"),
+
+			print bold("César Henrique Pontes") & " é um jogador de futebol que possui " & <cesarHenrique.idade> & " anos, ou seja, nasceu em " & expandedDate(<cesarHenrique.dataNascimento>) & ".\n",
+			print "Por ser um ótimo jogador seu cachê diário consiste em R$" & <cesarHenrique.cache> & " (" & expandedCurrency(<cesarHenrique.cache>) & ").\n",
+			print "É um jogador tão bom que possui um fã clube com a média de " & expandedNumber(<cesarHenrique.pretendentes>) & " novas pretendentes por mês"
+		}
+ 	}
+}

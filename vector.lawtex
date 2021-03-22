@@ -1,0 +1,20 @@
+template[TEMP_Vector_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Vector - CSR"
+		declarations {
+			+|vector| : Vector[String] {
+				name = "Possíveis lugares para viajar"
+				request = "Quais destinos você sonha em conhecer?"
+			}
+		} 
+	} 
+	head { 
+		title = "Destinos de viagens" 
+ 	} 
+ 	body {
+		operations {
+			print |vector|
+		}
+ 	}
+}

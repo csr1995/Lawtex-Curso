@@ -1,0 +1,16 @@
+template[TEMP_HelloJudge_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Hello Judge - CSR"
+		declarations {
+		} 
+	} 
+	head { 
+		title = "Meu primeiro programa" 
+ 	} 
+ 	body {
+		operations {
+			print "Olá, Juiz!"
+		}
+ 	}
+}

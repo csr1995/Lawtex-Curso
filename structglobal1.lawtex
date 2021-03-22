@@ -1,0 +1,24 @@
+template[TEMP_StructGlobal_CSR1] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Struct Global - CSR1"
+		declarations {
+			*struct[Membros_Omnijus] {
+				name = "Membros DJ"
+				fields {
+					+[nome] : String, 
+					+[email] : String
+				}
+			},
+			+|membrosOmnijus| : Vector[*Membros_Omnijus]
+		} 
+	} 
+	head { 
+		title = "Struct Global" 
+ 	} 
+ 	body {
+		operations {
+			print |membrosOmnijus|
+		}
+ 	}
+}

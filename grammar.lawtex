@@ -1,0 +1,25 @@
+template[TEMP_Grammar_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Grammar - CSR"
+		declarations {
+			+|pessoas| : Vector[Struct] {
+				name = "Pessoas"
+				fields {
+					+[nome] : String,
+					+[genero] : List("M", "F") {
+						atomic = true
+					}
+				}
+			}
+		} 
+	} 
+	head { 
+		title = "Grammar" 
+ 	} 
+ 	body {
+		operations {
+			print |pessoas|.grammar("Ele é legal")
+		}
+ 	}
+}

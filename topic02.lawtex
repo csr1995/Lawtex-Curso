@@ -1,0 +1,23 @@
+template[TEMP_Exercicio2_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Exercicio 02 - CSR"
+		declarations {
+			topic[TOP_Mandato] {
+				title = "MANDATO" 
+				operations {
+					print "\n 6.1. O Sócio Participante, neste ato e por força deste Contrato, em caráter irrevogável e irretratável, declarando e reconhecendo que a irrevogabilidade é condição para a celebração do presente Contrato, na forma e para os fins e efeitos dos artigos 683 e 684 do Código Civil, nomeia e constitui por meio desta cláusula mandato como seu legítimo procurador a Sócia Ostensiva outorgando-lhe poderes especiais para representar o Sócio Participante nas assembleias gerais do Condomínio e dos Subcondomínios nas quais não comparecer o Sócio Participante, podendo, para tanto, votar todos os itens da Ordem do Dia, consignar declarações e votos, presidir ou secretariar os trabalhos, bem como ser votado como síndico e, enfim, praticar todos os atos que se façam necessários ao bom desempenho do presente instrumento de mandato.
+"
+				}
+			}
+		} 
+	} 
+	head { 
+		title = "Exercicio 2"
+ 	} 
+ 	body {
+		operations {
+			use topic[TOP_Mandato]
+		}
+ 	}
+}

@@ -1,0 +1,20 @@
+template[TEMP_THAYANACOLONA] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Thay COLONA"
+		declarations {
+			branch[BRC_Thay] {
+				operations {
+					print "A Thayana só cola na prova"				}
+			}
+		} 
+	} 
+	head { 
+		title = "Cola da Thay" 
+ 	} 
+ 	body {
+		operations {
+			use branch[BRC_Thay]
+		}
+ 	}
+}

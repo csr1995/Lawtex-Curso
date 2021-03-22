@@ -1,0 +1,30 @@
+template[TEMP_Listas_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Exercício - Teste de listas - CSR"
+		declarations {
+			+<pratosDoDia> : List("Feijoada" , "Lasanha" , "Strogonoff" , "Risoto") {
+				name = "Pratos do dia."
+				request = "Qual prato os(as) senhores(as) desejam?"
+				help = "Escolha um dos pratos disponíveis em nosso restaurante!"
+				atomic = true
+			},
+			+<bebidaESobremessa> : List("Água" , "Refrigerante" , "Suco" , "Pudim" , "Sorvete" , "Bolo") {
+				name = "Bebida e sobremessa."
+				request = "Escolha sua bebida e sobremessa, por favor!"
+				help = "Escolha uma bebida e uma sobremessa"
+				atomic = false
+			}
+		} 
+	} 
+	head { 
+		title = "Restaurante OmniJus!" 
+ 	} 
+ 	body {
+		operations {
+			print "Seu almoço será: " & <pratosDoDia> & "\n",
+			print "Sua bebida e sobremessa serão: " & <bebidaESobremessa> & "\n" & "\n",
+			print "Agradecemos a preferência!"
+		}
+ 	}
+}

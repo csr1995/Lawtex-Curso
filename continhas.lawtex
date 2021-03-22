@@ -1,0 +1,28 @@
+template[TEMP_AtribuicaoEx_CSR] { 
+	metainfo { 
+		language = "pt_BR"
+		name = "Exercicio de atribuição - CSR"
+		declarations {
+			+<receitaTotal> : Currency {
+				name = "Receita Total"
+				request = "Informe o valor da receita total"
+			},
+			+<despesaTotal> : Currency {
+				name = "Despesa Total"
+				request = "Informe o valor da despesa total"
+			},
+			-<lucroLiquido> : Currency {
+				name = "Lucro Líquido"
+			}
+		} 
+	} 
+	head { 
+		title = "Lucro Líquido" 
+ 	} 
+ 	body {
+		operations {
+			<lucroLiquido> = <receitaTotal> - <despesaTotal>,
+			print "O lucro líquido é: " & <lucroLiquido>
+		}
+ 	}
+}

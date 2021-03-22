@@ -1,0 +1,128 @@
+<disposicoesFinais> 
+	+<local> : String {
+		name = "Local da proposta"
+		request = "Informa o local da proposta"
+	}	
+	+<data> : String {
+		name = "Data da proposta"
+		request = "Informe a data da proposta"
+	}
+	+<advogadoPrincipal> : String {
+		name = "Nome do advogado principal"
+		request = "Informe o nome do advogado principal"
+	}
+
+<cliente>
+	+<nome> : String {
+		name = "Nome do cliente"
+		request = "Informe o nome do cliente"
+	}
+	+<representanteLegal> : String {
+		name = "Nome do representante legal"
+		request = "Informe o nome do representante legal"
+	}
+	+<representanteLegal.nomeCompleto>
+	-<representanteLegal.nomeCompletoEmMaiuscula>
+
+<escritorio>
+	+<nome> : String {
+		name = "Nome do escritorio"
+		request = "Informe o nome do escritorio"
+	}
+	-<nomeEmMaiuscula>
+	+<numeroDeAdvogadosPorExtenso> : Intelger
+	+<numeroDeAdvogados> : Intelger
+	+<numeroDeEstagiariosPorExtenso> : Intelger
+	+<numeroDeEstagiarios> : Intelger
+	+<tempoDeAtuacao> : Date
+	+<areasDeAtuacao> : List ("Civel", "Trabalhistas", "Tributario") {
+		name = "Areas de atuação do escritorio"
+		request = "Informe a area de atuação"
+		atomic = false
+	}
+
+
+
+
+
+<proposta>
+	+<dataDaSolicitacao> : Date {
+		name = "Data da solicitação"
+		request = "Informe a data de solicitação da proposta"
+	}
+	+<modoDeEnvio> : List ("Courier", "Correios", "Pombos") {
+		name = "Modo de envio da proposta"
+		request = "Informe o modo de envio da proposta"
+		atomic = false
+	}
+	+<haveraPrestacaoDeServicosExtrajudiciais> : Boolean
+	+<tipoDePrestacao> : List ("Mensal", "Por projeto") {
+		name = "Tipo de prestação da proposta"
+		request = "Informe o tipo de prestação da proposta"
+		atomic = false
+	}
+	+<validade> : Intelger
+	+<desejaAdicionarServicosAdicionais> : Boolean
+	+<dataDeValidadePorExtenso> : String {
+		name = "Data de validade da proposta"
+		request = "Informe a data de validade da proposta"
+	}
+	
+	+<servicosConsultoriaPrestados> : List ("Pesquisa", "Reunioes", "Treinamento", "Consulta em expediente", "Consulta fora do expediente", "Parecer escrito", "Acompanhamento", "Autos de processo", "Peticao ou requerimento", "Correspondencias", "Constitutivos ou descontitutivos", "Contratos estatutos e outros instrumentos", "Administracao publica", "Litigio", "Medidas Cautelares", "Interpelacoes, protestos e noticacoes", "Homologacoes", "Dissidios", "Titulos de credito", "Processos Licitatorios", "Recursos Administrativos", "Advocacia preventiva") {
+		name = "Serviços"
+		request = ""
+		atomic = false
+	}
+ 
+
+
+|membro|
+	+<nome> : String {
+		name = "Nome do membro"
+		resquest = "Informe o nome do membro"
+	}
+	+<cargo> : String {
+		name = "Cargo do membro"
+		resquest = "Informe o cargo do membro"
+	}
+	+<temEmail> : Boolean == true
+	+<email> : String {
+		name = "Email do membro"
+		resquest = "Informe o email do membro"
+	}
+
+
+
+
+
+<pgtoMensal>
+	+<numDeSalMin> : Intelger
+	-<numDeSalMinPorExtenso> : String
+	+<valorSalMin> : Intelger
+	-<valorSalMinPorExtenso> : String
+	+<total>  : Intelger
+	-<totalPorExtenso> : String
+
+<pgtoProj>
+	+<horasTrabalhadas> : Intelger 
+	+<total> : Intelger
+	-<totalPorExtenso> : String
+	+<valorDaHora> : Intelger
+	-<valorDaHoraPorExtenso> : String
+
+
+
+
+
+
+<contrato>
+	+<validade> : Intelger
+	-<validadePorExtenso> : String 
+
+
+|servicosAdicionais|
+
+
+
+
+

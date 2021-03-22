@@ -1,0 +1,16 @@
+template[TEMP_Print_CSR] { 
+	metainfo { 
+		language = "pt_BR" 
+	} 
+	head { 
+		title = "Print: Impressão de textos" 
+ 	} 
+ 	body {
+		operations {
+			print "Olá, Juiz! ",
+			print "Esse texto continuará " & "na" & " mesma linha",
+			print ". Mas vou quebrar linha agora: \n",
+			print ".\tUsarei tabulação."
+		}
+ 	}
+}
